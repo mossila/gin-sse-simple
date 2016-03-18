@@ -10,6 +10,11 @@ test
 curl http://localhost:8080/time/
 ```
 
+website client
+```
+http://localhost:8080/client/
+```
+
 result
 
 ```
