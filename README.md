@@ -39,16 +39,16 @@ Tested with [sse-pref][https://github.com/matthiasn/sse-perf]
 ####Hardware
 Yeah, that my macbook.
 
-![alt tag](img/hardware.png|alt=hardware)
+![alt tag](img/hardware.png)
 
 ####Connection
 
 touch the max transferate 
 
-![alt tag](img/connection.png|alt=connection)
+![alt tag](img/connection.png)
 
 ####CPU
 
 Cpu usage Instant drop after close all connection 
 
-![alt tag](img/cpu-usage.png|alt=connection)
+![alt tag](img/cpu-usage.png)
