@@ -48,6 +48,8 @@ Yeah, that my macbook.
 * max msg/s is  about 80-90K msg/s.
 
 ![alt tag](img/connection.png)
+
+This image test configured with larger message size.
 ![alt tag](img/max-connection.png)
 
 ####CPU
