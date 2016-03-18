@@ -43,8 +43,8 @@ Yeah, that my macbook.
 
 ####Connection
 
-* max connection is about 2555 (maybe OSX 's max connections configured).
-* max speed about 50 MB/s  (My network connection limit).
+* max connection is about 2555 (maybe OSX 's max connections configured?).
+* max speed about 50 MB/s (I tested on localhost. Why it has limits?)
 
 ![alt tag](img/connection.png)
 ![alt tag](img/max-connection.png)
