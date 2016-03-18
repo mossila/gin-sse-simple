@@ -39,16 +39,16 @@ Tested with [sse-pref][https://github.com/matthiasn/sse-perf]
 ####Hardware
 Yeah, that my macbook.
 
-[[https://github.com/mossila/gin-sse-simple/blob/master/img/hardware.png|alt=connection]]
+![alt tag](img/hardware.png|alt=hardware)
 
 ####Connection
 
 touch the max transferate 
 
-[[https://github.com/mossila/gin-sse-simple/blob/master/img/connection.png|alt=connection]]
+![alt tag](img/connection.png|alt=connection)
 
 ####CPU
 
 Cpu usage Instant drop after close all connection 
 
-[[https://github.com/mossila/gin-sse-simple/blob/master/img/cpu-usage.png|alt=connection]]
+![alt tag](img/cpu-usage.png|alt=connection)
