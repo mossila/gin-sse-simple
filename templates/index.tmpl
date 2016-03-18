@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head><title>time</title></head>
+    <script>
+        if (!!window.EventSource) {
+            var source = new EventSource('/time/');
+            eventControl(source)
+        } else {
+            document.getElementById('time').innerHTML = 
+            "This browser does not support realtime Server sent events.";
+        }
+        function eventControl(source) {
+            source.addEventListener('message',function(e){
+                document.getElementById('time').innerHTML = 
+                e.data;
+            },false);
+            
+            source.addEventListener('open', function(e) {
+                document.getElementById('time').innerHTML = 
+                "Connection was opened.";
+            }, false);
+            
+            source.addEventListener('error', function(e) {
+                if (e.readyState == EventSource.CLOSED) {
+                    document.getElementById('time').innerHTML = 
+                    "Connection was closed.";
+                }
+            }, false);
+            
+        }
+        </script>
+    <body>
+        <p id="status"></p>
+        <p id="time"></p> 
+    </body>
+</html>

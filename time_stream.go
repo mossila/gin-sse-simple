@@ -8,9 +8,16 @@ import (
 )
 
 func main() {
+    gin.SetMode(gin.ReleaseMode)
 	router := gin.Default()
+    router.LoadHTMLGlob("templates/*")
 	router.GET("time/", timeStream)
+    router.GET("client/", client)
 	router.Run(":8080")
+}
+func client(c *gin.Context) {
+    c.HTML(200, "index.tmpl", 
+    gin.H{})
 }
 
 func timeStream(c *gin.Context) {
@@ -23,7 +30,7 @@ func timeStream(c *gin.Context) {
 }
 func timeProvider(timeChan chan string) {
 	defer close(timeChan)
-	for x := range time.Tick(1 * time.Second) {
+	for x := range time.Tick(2 * time.Millisecond) {
 		timeChan <- x.String()
 	}
 
