@@ -45,6 +45,7 @@ Yeah, that my macbook.
 
 * max connection is about 2555 (maybe OSX 's max connections configured?).
 * max speed about 50 MB/s (I tested on localhost. Why it has limits?)
+* max msg/s is  about 80-90K msg/s.
 
 ![alt tag](img/connection.png)
 ![alt tag](img/max-connection.png)
