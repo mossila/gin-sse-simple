@@ -43,7 +43,8 @@ Yeah, that my macbook.
 
 ####Connection
 
-touch the max transferate 
+* max connection is about 2555 (maybe OSX 's max connections configured).
+* max speed about 5 MB/s  (My network connection limit).
 
 ![alt tag](img/connection.png)
 
