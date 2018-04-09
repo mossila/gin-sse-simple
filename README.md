@@ -34,7 +34,7 @@ event:message
 data:2015-09-09 13:01:34.277990689 +0700 ICT
 ```
 
-###Performance
+## Performance
  
 Tested with [sse-pref][https://github.com/matthiasn/sse-perf]
 
@@ -43,7 +43,7 @@ Yeah, that my macbook.
 
 ![alt tag](img/hardware.png)
 
-####Connection
+## Connection
 
 * max connection is about 2555 (maybe OSX 's max connections configured?).
 * max speed about 50 MB/s (I tested on localhost. Why it has limits?)
@@ -54,7 +54,7 @@ Yeah, that my macbook.
 This image test configured with larger message size.
 ![alt tag](img/max-connection.png)
 
-####CPU
+## CPU
 
 Cpu usage Instant drop after close all connection 
 
