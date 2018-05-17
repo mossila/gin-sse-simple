@@ -47,7 +47,7 @@ data:2015-09-09 13:01:34.277990689 +0700 ICT
 
 ## Performance
  
-Tested with [sse-pref][https://github.com/matthiasn/sse-perf]
+Tested with [sse-pref](https://github.com/matthiasn/sse-perf)
 
 ####Hardware
 Yeah, that my macbook.
