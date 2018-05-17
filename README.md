@@ -1,8 +1,19 @@
 # gin-sse-simple
 
+
+
+
 install 
+
 ```
 go get github.com/mossila/gin-sse-simple
+```
+
+Or clone and sync with `govendor`
+```
+git clone https://github.com/mossila/gin-sse-simple.git
+cd gin-sse-simple/
+govendor sync
 ```
 
 usage
