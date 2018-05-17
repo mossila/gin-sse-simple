@@ -1,19 +1,30 @@
 # gin-sse-simple
 
+install 
+```
+go get github.com/mossila/gin-sse-simple
+```
+
 usage
+
 ```
 go run time_stream.go
 ```
 
-test
-```
-curl http://localhost:8080/time/
-```
 
 website client
+
 ```
-http://localhost:8080/client/
+http://localhost:8888/
 ```
+
+
+test with raw data.
+
+```
+curl http://localhost:8888/time/
+```
+
 
 result
 
