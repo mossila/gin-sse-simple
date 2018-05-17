@@ -1,0 +1,73 @@
+{
+	"comment": "",
+	"ignore": "test",
+	"package": [
+		{
+			"checksumSHA1": "BhMowD2DIKSd9qq8Pzh7Y3mh2/w=",
+			"path": "github.com/gin-contrib/sse",
+			"revision": "22d885f9ecc78bf4ee5d72b937e4bbcdc58e8cae",
+			"revisionTime": "2017-01-09T09:34:21Z"
+		},
+		{
+			"checksumSHA1": "F55wrLJYF4c6A++gsoaBGm4c3Yg=",
+			"path": "github.com/gin-gonic/gin",
+			"revision": "bf7803815b0baa22ff7a10457932882dfbf09925",
+			"revisionTime": "2018-05-12T03:00:42Z"
+		},
+		{
+			"checksumSHA1": "RpOzvbtNRBVl/4oH+l3zpR1+An0=",
+			"path": "github.com/gin-gonic/gin/binding",
+			"revision": "bf7803815b0baa22ff7a10457932882dfbf09925",
+			"revisionTime": "2018-05-12T03:00:42Z"
+		},
+		{
+			"checksumSHA1": "ZrBlc4nW5joRSLLRThHlxU+bWtg=",
+			"path": "github.com/gin-gonic/gin/json",
+			"revision": "bf7803815b0baa22ff7a10457932882dfbf09925",
+			"revisionTime": "2018-05-12T03:00:42Z"
+		},
+		{
+			"checksumSHA1": "04QfyzytHF4KelLmwjW/hY/qdTo=",
+			"path": "github.com/gin-gonic/gin/render",
+			"revision": "bf7803815b0baa22ff7a10457932882dfbf09925",
+			"revisionTime": "2018-05-12T03:00:42Z"
+		},
+		{
+			"checksumSHA1": "ZQKjg7USrTzlCOloM3qEiRdoZDI=",
+			"path": "github.com/golang/protobuf/proto",
+			"revision": "927b65914520a8b7d44f5c9057611cfec6b2e2d0",
+			"revisionTime": "2018-05-11T22:16:37Z"
+		},
+		{
+			"checksumSHA1": "CkIY5czHIKb3fb/C8I9OCNEQOVY=",
+			"path": "github.com/grafov/bcast",
+			"revision": "2c1e067432bbea64f9bd7348613e2977e11ca299",
+			"revisionTime": "2017-07-09T22:27:04Z"
+		},
+		{
+			"checksumSHA1": "kum8izZy1+pVfDiApW5hT2HoH1w=",
+			"path": "github.com/mattn/go-isatty",
+			"revision": "6ca4dbf54d38eea1a992b3c722a76a5d1c4cb25c",
+			"revisionTime": "2017-11-07T05:05:31Z"
+		},
+		{
+			"checksumSHA1": "fboFf9h980OU/TqoU4NZZjYsfy8=",
+			"path": "github.com/ugorji/go/codec",
+			"revision": "f3cacc17c85ecb7f1b6a9e373ee85d1480919868",
+			"revisionTime": "2018-04-07T10:30:00Z"
+		},
+		{
+			"checksumSHA1": "q190bL03wQok3wVwYmMub2XhOiU=",
+			"path": "gopkg.in/go-playground/validator.v8",
+			"revision": "5f1438d3fca68893a817e4a66806cea46a9e4ebf",
+			"revisionTime": "2017-07-30T05:02:35Z"
+		},
+		{
+			"checksumSHA1": "d3jYBfW+YmOxsa5o8m6XyywVbIo=",
+			"path": "gopkg.in/yaml.v2",
+			"revision": "5420a8b6744d3b0345ab293f6fcba19c978f1183",
+			"revisionTime": "2018-03-28T19:50:20Z"
+		}
+	],
+	"rootPath": "github.com/mossila/gin-sse-simple"
+}
