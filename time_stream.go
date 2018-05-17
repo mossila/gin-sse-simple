@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"io"
 	"time"
 
@@ -21,8 +22,9 @@ func main() {
 
 	gin.SetMode(gin.ReleaseMode)
 	router := gin.Default()
+	router.Delims("gin{{", "}}")
 	router.LoadHTMLGlob("templates/*")
-	router.GET("time/", app.timeStream)
+	router.GET("time/:name", app.timeStream)
 	router.GET("/", client)
 	router.Run(":8888")
 }
@@ -32,10 +34,12 @@ func client(c *gin.Context) {
 }
 
 func (app *appContext) timeStream(c *gin.Context) {
+	name := c.Param("name")
 	recv := app.timeGroup.Join()
 	defer recv.Close()
 	c.Stream(func(w io.Writer) bool {
-		c.SSEvent("message", recv.Recv().(string))
+		msg := fmt.Sprintf("%s:%v", name, recv.Recv().(string))
+		c.SSEvent("message", msg)
 		return true
 	})
 }

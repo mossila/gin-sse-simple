@@ -2,36 +2,54 @@
 <html>
     <head><title>time</title></head>
     <script>
+        let apiUrl = 'http://localhost:8888';
+        var lastId = 1;
+        function subscribeTimeStream(id) {
+            var source = new EventSource(apiUrl +'/time/'+id);
+            return source;
+        }
         if (!!window.EventSource) {
-            var source = new EventSource('/time/');
-            eventControl(source)
+            let elemId = 'time';
+            let stream = subscribeTimeStream(elemId);
+            updateEventToElementId(stream, elemId)
         } else {
             document.getElementById('time').innerHTML = 
             "This browser does not support realtime Server sent events.";
         }
-        function eventControl(source) {
-            source.addEventListener('message',function(e){
-                document.getElementById('time').innerHTML = 
+        function updateEventToElementId(stream, elemId) {
+            stream.addEventListener('message',function(e){
+                document.getElementById(elemId).innerHTML = 
                 e.data;
             },false);
             
-            source.addEventListener('open', function(e) {
-                document.getElementById('time').innerHTML = 
+            stream.addEventListener('open', function(e) {
+                document.getElementById(elemId).innerHTML = 
                 "Connection was opened.";
             }, false);
             
-            source.addEventListener('error', function(e) {
+            stream.addEventListener('error', function(e) {
                 if (e.readyState == EventSource.CLOSED) {
-                    document.getElementById('time').innerHTML = 
+                    document.getElementById(elemId).innerHTML = 
                     "Connection was closed.";
                 }
             }, false);
-            
+        }
+        function addRow() { 
+            let row = document.getElementById('row');
+            lastId += 1;
+            let id = 'time'+lastId;
+            var node = document.createElement('li');
+            node.id = id;
+            row.appendChild(node);
+            let stream = subscribeTimeStream(id);
+            updateEventToElementId(stream, id);
         }
         </script>
     <body>
         <p id="status"></p>
-        <pre id="time"></pre> 
-        <button type="button">Still clickable?</button>
+        <button type="button" onclick="addRow()">Still clickable?</button>
+        <ul id="row">
+            <li id="time"></li> 
+        </ul>
     </body>
 </html>
