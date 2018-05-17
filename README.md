@@ -21,6 +21,13 @@ usage
 ```
 go run time_stream.go
 ```
+use [watcher](https://github.com/canthefason/go-watcher) for live development
+
+```
+cd gin-sse-simple/
+watcher
+```
+
 
 
 website client
