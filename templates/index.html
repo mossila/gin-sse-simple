@@ -30,7 +30,14 @@
                 eid(elemId).innerHTML = "Connection was opened.";
             };
             stream.onmessage = function (event) {
-                eid(elemId).innerHTML = event.data;
+                
+                let resp = JSON.parse(event.data);
+                eid('raw').innerHTML = event.data;
+                if ('time' == resp.type) {
+                    eid(elemId).innerHTML = resp.data;
+                } else if ('chat' == resp.type) {
+                    eid('chat').innerHTML = resp.msg;
+                }
             };
             stream.onchange = function(test) {
                 console.log("test : ", test);
@@ -48,14 +55,33 @@
         }
 
         function chatBack() {
-            
+            var data = JSON.stringify({
+                "user": "time",
+                "msg": "hello"
+            });
+
+            var xhr = new XMLHttpRequest();
+            xhr.withCredentials = true;
+
+            xhr.addEventListener("readystatechange", function () {
+            if (this.readyState === 4) {
+                console.log(this.responseText);
+            }
+            });
+
+            xhr.open("POST", apiUrl + "/msg");
+            xhr.setRequestHeader("Content-Type", "application/json");
+            xhr.send(data);
         }
         </script>
     <body>
         <p id="status"></p>
         <button type="button" onclick="chatBack()">Still clickable?</button>
         <ul id="row">
+            <li id='raw'></li>
             <li id="time"></li> 
+            <li id="chat"></li> 
         </ul>
+        
     </body>
 </html>
