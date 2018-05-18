@@ -24,6 +24,6 @@ func newReciever(group *bcast.Group) {
 func TimeProvider(group *bcast.Group, d time.Duration) {
 	defer group.Close()
 	for x := range time.Tick(d) {
-		group.Send(x.String())
+		group.Send(map[string]interface{}{"type": "time", "data": x.String()})
 	}
 }

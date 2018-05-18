@@ -13,29 +13,31 @@
             let stream = subscribeTimeStream(elemId);
             updateEventToElementId(stream, elemId)
         } else {
-            document.getElementById('time').innerHTML = 
-            "This browser does not support realtime Server sent events.";
+            eid('time').innerHTML =  "This browser does not support realtime Server sent events.";
+        }
+        function eid(elemId) {
+            return document.getElementById(elemId);
         }
         function updateEventToElementId(stream, elemId) {
-            stream.addEventListener('message',function(e){
-                document.getElementById(elemId).innerHTML = 
-                e.data;
-            },false);
-            
-            stream.addEventListener('open', function(e) {
-                document.getElementById(elemId).innerHTML = 
-                "Connection was opened.";
-            }, false);
-            
-            stream.addEventListener('error', function(e) {
-                if (e.readyState == EventSource.CLOSED) {
-                    document.getElementById(elemId).innerHTML = 
-                    "Connection was closed.";
+            stream.onerror = function (event) {
+                console.log("onerror");
+                if (event.readyState == EventSource.CLOSED) {
+                    eid(elemId).innerHTML = "Connection was closed.";
                 }
-            }, false);
+            };
+            stream.onopen = function (event) {
+                console.log("onopen");
+                eid(elemId).innerHTML = "Connection was opened.";
+            };
+            stream.onmessage = function (event) {
+                eid(elemId).innerHTML = event.data;
+            };
+            stream.onchange = function(test) {
+                console.log("test : ", test);
+            };
         }
         function addRow() { 
-            let row = document.getElementById('row');
+            let row = eid('row');
             lastId += 1;
             let id = 'time'+lastId;
             var node = document.createElement('li');
@@ -44,10 +46,14 @@
             let stream = subscribeTimeStream(id);
             updateEventToElementId(stream, id);
         }
+
+        function chatBack() {
+            
+        }
         </script>
     <body>
         <p id="status"></p>
-        <button type="button" onclick="addRow()">Still clickable?</button>
+        <button type="button" onclick="chatBack()">Still clickable?</button>
         <ul id="row">
             <li id="time"></li> 
         </ul>
